@@ -41,7 +41,8 @@ function App() {
     // console.log("computerChoice", computerChoice);
     setComputerSelect(computerChoice);
     setResult(judgement(choice[userChoice], computerChoice));
-    console.log(judgement(choice[userChoice], computerChoice))
+    // console.log("user","com",userSelect, computerSelect)
+    // console.log(judgement(choice[userChoice], computerChoice))
     // judgement는 일반함수. 따라서 state처럼 비동기적으로 실행되는게 아니라 콘솔에도 누르는 값이 바로바로 반영돼서 보인다.
     // state는 렌더링 이후 최신화 된다.
   }
