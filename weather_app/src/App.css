@@ -23,5 +23,17 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 30px;
   gap: 10px;
+}
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 100vh;
+}
+Button{
+  margin: 5px;
 }
