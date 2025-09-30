@@ -7,12 +7,12 @@ const WeatherButton = ({cities, setCity, selectedCity, handleCityChange}) => {
     console.log(cities);
   return (
     <div>
-        <Button onClick={()=>handleCityChange("current")} variant={`${selectedCity == null ? "outline-secondary" : "secondary"}`}>Current Location</Button>       
+        <Button onClick={()=>handleCityChange("current")} className={`${selectedCity === null ? "custom-btn" : ""}`} variant="secondary">Current Location</Button>       
         {/* <Button onClick={testFunction} variant="secondary">Seoul</Button>         */}
         {/* <Button onClick={(e)=>testFunction(e)} variant="secondary">Seoul</Button> */}
         {/* <Button onClick={()=>getWeatherByCurrentLocation(48.864716, 2.349014)} variant="secondary">Paris</Button> */}
         {cities.map((item)=>(
-            <Button onClick={()=>{
+            <Button className={`${selectedCity === item ? "custom-btn" : ""}`} onClick={()=>{
                 // console.log(e.target.textContent)
                 // showButtonWeather(item)
                 console.log(item)

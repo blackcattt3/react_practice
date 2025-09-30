@@ -37,3 +37,7 @@ body{
 Button{
   margin: 5px;
 }
+.custom-btn {
+  background-color: beige ;
+  color: black;
+}

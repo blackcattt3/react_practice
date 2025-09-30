@@ -72,7 +72,7 @@ function App() {
   // }
 
   useEffect(()=>{
-    if(city==""){
+    if(city === "" || city === null){
       getCurrentLocation();
     } else{
       getWeatherByCity();
