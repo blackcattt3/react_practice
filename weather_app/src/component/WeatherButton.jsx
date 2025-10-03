@@ -15,8 +15,9 @@ const WeatherButton = ({cities, setCity, selectedCity, handleCityChange}) => {
             <Button className={`${selectedCity === item ? "custom-btn" : ""}`} onClick={()=>{
                 // console.log(e.target.textContent)
                 // showButtonWeather(item)
-                console.log(item)
+                console.log("sc",item)
                 setCity(item)
+                console.log("sc2",selectedCity)
             }} variant="secondary">{item}</Button>
         ))}
 
