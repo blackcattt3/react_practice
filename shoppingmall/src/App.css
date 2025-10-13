@@ -1,0 +1,56 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+html,body,#root{
+  margin: 0px;
+  padding: 0px;
+  height: 100%
+}
+.top{
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  padding: 10px;
+}
+.logo-img{
+  height: 100px;
+}
+.middle{
+  display: flex;
+  justify-content: center;
+}
+.bottom{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  /* border: 1px solid black; */
+  position: relative; /* 검색창 절대 위치 기준 */
+}
+.menu-list{
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+}
+.inputBox{
+  height:25px;
+  width: 150px;
+  border: none;
+  outline: none;
+  padding: 0 0 0 25px;
+  border-bottom: 2px solid black;
+  font-size: 15px;
+}
+.search-bar{
+  position: absolute; /* 부모(.bottom) 기준으로 위치 고정 */
+  right: 20px; /* 오른쪽에서 20px 떨어지게 */
+  display: flex;
+  align-items: center;
+}
+.search-icon{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
