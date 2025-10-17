@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {Routes, Route,Link} from 'react-router-dom'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -8,23 +8,23 @@ import ProductAll from './page/ProductAll'
 import ProductDetail from './page/ProductDetail'
 import Login from './page/Login'
 import Navbar from './component/Navbar'
+import PrivateRoute from './route/PrivateRoute';
 
 function App() {
 
-  /** 콘솔에 원하는 값을 출력합니다. */
-  function foo(){
-    console.log("1")
-  };
-  foo
   
+  const [authenticate, setAuthenticate] = useState(false);  // true면 로그인 됌
+  useEffect(()=>{
+    console.log(authenticate)
+  },[authenticate])
 
   return (
     <div>
       <Navbar/>
       <Routes>
         <Route path="/" element={<ProductAll/>}/>
-        <Route path="/product/:id" element={<ProductDetail/>}/>
-        <Route path="/Login" element={<Login/>}/>
+        <Route path="/product/:id" element={<PrivateRoute authenticate={authenticate}/> }/>
+        <Route path="/Login" element={<Login setAuthenticate={setAuthenticate}/>}/>
       </Routes>
     </div>
   )

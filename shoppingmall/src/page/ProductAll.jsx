@@ -2,12 +2,16 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import ProductCard from '../component/ProductCard';
 import { Container, Row, Col } from 'react-bootstrap';
+import {useSearchParams} from 'react-router-dom'
 
 const ProductAll = () => {
     const [productList, setProductList] = useState([]);
+    const [query, setQuery] = useSearchParams();
 
     const getProducts = async ()=>{
-        let url = new URL('http://localhost:4000/products');
+        let searchQuery = query.get('q') || "";
+        console.log("쿼리값", searchQuery)
+        let url = new URL(`http://localhost:4000/products?q=${searchQuery}`);
         let response = await fetch(url);
         let data = await response.json();
         setProductList(data);
@@ -16,14 +20,14 @@ const ProductAll = () => {
 
     useEffect(()=>{
         getProducts()
-    },[])
+    },[query])
     
   return (
     <div>
         <Container>
             <Row>
-                {productList.map((menu)=>(
-                    <Col sm={6} md={4} lg={3}>
+                {productList.map((menu, index)=>(
+                    <Col sm={6} md={4} lg={3} key={index}>
                         <ProductCard item={menu}/>
                     </Col>))}
             </Row>
