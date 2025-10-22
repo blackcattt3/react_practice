@@ -1,0 +1,12 @@
+.first{
+    min-height: 100vh;
+}
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: lightgray;
+    transition: background-color 0.5s ease-in-out;
+}
+.box.purple{
+    background-color: purple;
+}
