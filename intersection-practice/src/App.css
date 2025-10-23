@@ -20,7 +20,7 @@ html,body,#root{
   height: 600px;
   border: 1px solid black;
   opacity: 0;
-  transition: opacity 1s ease-in-out
+  transition: opacity 1.5s ease-in-out;
 }
 .fade-in{
   /* animation: fade-in 3s; */
